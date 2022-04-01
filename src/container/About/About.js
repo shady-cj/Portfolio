@@ -65,7 +65,7 @@ const About = () => {
                     modules={[EffectCoverflow, Pagination]}
                 >
                     {abouts.map((about, index) => (
-                        <SwiperSlide>
+                        <SwiperSlide key={index}>
                             <img src={urlFor(about.imgUrl)} alt={about.title} />
                             <h2 className="bold-text" style={{ marginTop: 20 }}>
                                 {about.title}

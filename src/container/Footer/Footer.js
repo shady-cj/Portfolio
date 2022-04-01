@@ -3,6 +3,7 @@ import "./Footer.scss";
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../Wrapper";
 import { client } from "../../client";
+import { SocialMedia } from "../../components";
 
 const Footer = () => {
     const [formData, setFormData] = useState({
@@ -101,6 +102,9 @@ const Footer = () => {
                     </h3>
                 </div>
             )}
+            <section className="social-mob-con">
+                <SocialMedia mobile={true} className="social__mobile" />
+            </section>
         </>
     );
 };

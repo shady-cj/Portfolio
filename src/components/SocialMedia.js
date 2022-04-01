@@ -2,9 +2,13 @@ import React from "react";
 import { BsTwitter, BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 
-const SocialMedia = () => {
+const SocialMedia = ({ mobile, className }) => {
     return (
-        <div className="app__social">
+        <div
+            className={`app__social ${mobile ? "app__social-mobile" : ""} ${
+                className ? className : ""
+            }`}
+        >
             <div>
                 <a
                     href="https://twitter.com/_c_e_e_j_a_y"

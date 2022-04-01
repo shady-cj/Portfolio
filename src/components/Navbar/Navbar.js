@@ -3,6 +3,7 @@ import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { images } from "../../constants";
 import "./Navbar.scss";
+import SocialMedia from "../SocialMedia";
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     return (
@@ -22,13 +23,9 @@ const Navbar = () => {
                 <HiMenuAlt4 onClick={() => setToggle(true)} />
 
                 <div
-                    // whileInView={{ x: [300, 0] }}
-                    // transition={{
-                    //     duration: 0.85,
-                    //     ease: "easeOut",
-                    // }}
-                    // initial={{ x: 300 }}
-                    className={toggle && "app__navbar-menu-open"}
+                    className={`app__navbar-menu-container ${
+                        toggle && "app__navbar-menu-open"
+                    }`}
                 >
                     <HiX onClick={() => setToggle(false)} />
                     <ul>
@@ -36,17 +33,10 @@ const Navbar = () => {
                             (item, index) => (
                                 <li
                                     key={item}
-                                    // animate={{
-                                    //     x: [500, 0],
-                                    // }}
-                                    // initial={{ x: 100 }}
-                                    // transition={{
-                                    //     delay: index,
-                                    //     duration: 0.7,
-                                    // }}
                                     className={
-                                        toggle &&
-                                        `animate__navbar-item-${index}`
+                                        toggle
+                                            ? `animate__navbar-item-${index}`
+                                            : ""
                                     }
                                 >
                                     <a
@@ -59,6 +49,8 @@ const Navbar = () => {
                             )
                         )}
                     </ul>
+
+                    <SocialMedia mobile={true} />
                 </div>
             </div>
         </nav>
