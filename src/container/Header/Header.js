@@ -19,19 +19,19 @@ const scaleVariants = {
 };
 const Header = () => {
     useEffect(() => {
-        const createBubbles = () => {
-            const section = document.querySelector("#home");
-            const createElement = document.createElement("span");
-            createElement.classList.add("bubble");
-            let size = Math.random() * 60;
-            createElement.style.width = 20 + size + "px";
-            createElement.style.height = 20 + size + "px";
-            createElement.style.left = Math.random() * window.innerWidth + "px";
-            section.appendChild(createElement);
-            setTimeout(() => {
-                createElement.remove();
-            }, 4000);
-        };
+        // const createBubbles = () => {
+        //     const section = document.querySelector("#home");
+        //     const createElement = document.createElement("span");
+        //     createElement.classList.add("bubble");
+        //     let size = Math.random() * 60;
+        //     createElement.style.width = 20 + size + "px";
+        //     createElement.style.height = 20 + size + "px";
+        //     createElement.style.left = Math.random() * window.innerWidth + "px";
+        //     section.appendChild(createElement);
+        //     setTimeout(() => {
+        //         createElement.remove();
+        //     }, 4000);
+        // };
         $(".app__header").ripples({
             dropRadius: 10,
             perturbance: 0.01,
@@ -40,10 +40,10 @@ const Header = () => {
             dropRadius: 10,
             perturbance: 0.01,
         });
-        const interval = setInterval(createBubbles, 250);
-        return () => {
-            clearInterval(interval);
-        };
+        // const interval = setInterval(createBubbles, 250);
+        // return () => {
+        //     clearInterval(interval);
+        // };
     }, []);
 
     return (
