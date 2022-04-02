@@ -1,5 +1,6 @@
 import email from "../assets/email.png";
 import mobile from "../assets/mobile.png";
+import bgImg from "../assets/bgIMG.png";
 import css from "../assets/css.png";
 import git from "../assets/git.png";
 import html from "../assets/html.png";
@@ -44,5 +45,6 @@ const images = {
     profile,
     circle,
     logo,
+    bgImg,
 };
 export default images;
