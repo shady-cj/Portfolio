@@ -163,57 +163,6 @@ const Work = () => {
                                     src={work.imgUrl && urlFor(work.imgUrl)}
                                     alt={work.name}
                                 />
-                                {/* create a motion.div tag */}
-                                <motion.div
-                                    whileHover={{ opacity: [0, 1] }}
-                                    whileTap={{ opacity: [0, 1] }}
-                                    className="app__work-hover app__flex"
-                                    transition={{
-                                        duration: 0.25,
-                                        ease: "easeInOut",
-                                        staggerChildren: 0.5,
-                                    }}
-                                >
-                                    {work.projectLink && (
-                                        <a
-                                            href={work.projectLink}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                        >
-                                            <motion.div
-                                                whileHover={{ scale: [1, 0.9] }}
-                                                whileInView={{ scale: [0, 1] }}
-                                                whileTap={{ scale: [1, 0.9] }}
-                                                className="app__flex"
-                                                transition={{
-                                                    duration: 0.25,
-                                                }}
-                                            >
-                                                <AiFillEye />
-                                            </motion.div>
-                                        </a>
-                                    )}
-
-                                    {work.codeLink && (
-                                        <a
-                                            href={work.codeLink}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                        >
-                                            <motion.div
-                                                whileHover={{ scale: [1, 0.9] }}
-                                                whileInView={{ scale: [0, 1] }}
-                                                whileTap={{ scale: [1, 0.9] }}
-                                                className="app__flex"
-                                                transition={{
-                                                    duration: 0.25,
-                                                }}
-                                            >
-                                                <AiFillGithub />
-                                            </motion.div>
-                                        </a>
-                                    )}
-                                </motion.div>
                             </div>
                             <div className="app__work-content app__flex">
                                 <h4 className="bold-text">{work.title}</h4>
@@ -221,6 +170,27 @@ const Work = () => {
                                     {work.description}
                                 </p>
                             </div>
+                            <section className="app__work-link-section">
+                                {work.codeLink && (
+                                    <a
+                                        href={work.codeLink}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        <AiFillGithub /> code
+                                    </a>
+                                )}
+                                {work.projectLink && (
+                                    <a
+                                        href={work.projectLink}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="live-link"
+                                    >
+                                        <AiFillEye /> Live
+                                    </a>
+                                )}
+                            </section>
                         </SwiperSlide>
                     ))}
                 </Swiper>
