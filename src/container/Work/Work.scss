@@ -185,9 +185,7 @@
         flex-direction: column !important;
         justify-content: center;
         align-items: center;
-        .app__work-content {
-            pointer-events: none;
-        }
+        cursor: pointer;
         &:hover {
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
         }

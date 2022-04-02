@@ -92,38 +92,43 @@ const Work = () => {
                                     staggerChildren: 0.5,
                                 }}
                             >
-                                <a
-                                    href={work.projectLink && work.projectLink}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <motion.div
-                                        whileHover={{ scale: [1, 0.9] }}
-                                        whileInView={{ scale: [0, 1] }}
-                                        className="app__flex"
-                                        transition={{
-                                            duration: 0.25,
-                                        }}
+                                {work.projectLink && (
+                                    <a
+                                        href={work.projectLink}
+                                        target="_blank"
+                                        rel="noreferrer"
                                     >
-                                        <AiFillEye />
-                                    </motion.div>
-                                </a>
-                                <a
-                                    href={work.codeLink && work.codeLink}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <motion.div
-                                        whileHover={{ scale: [1, 0.9] }}
-                                        whileInView={{ scale: [0, 1] }}
-                                        className="app__flex"
-                                        transition={{
-                                            duration: 0.25,
-                                        }}
+                                        <motion.div
+                                            whileHover={{ scale: [1, 0.9] }}
+                                            whileInView={{ scale: [0, 1] }}
+                                            className="app__flex"
+                                            transition={{
+                                                duration: 0.25,
+                                            }}
+                                        >
+                                            <AiFillEye />
+                                        </motion.div>
+                                    </a>
+                                )}
+
+                                {work.codeLink && (
+                                    <a
+                                        href={work.codeLink}
+                                        target="_blank"
+                                        rel="noreferrer"
                                     >
-                                        <AiFillGithub />
-                                    </motion.div>
-                                </a>
+                                        <motion.div
+                                            whileHover={{ scale: [1, 0.9] }}
+                                            whileInView={{ scale: [0, 1] }}
+                                            className="app__flex"
+                                            transition={{
+                                                duration: 0.25,
+                                            }}
+                                        >
+                                            <AiFillGithub />
+                                        </motion.div>
+                                    </a>
+                                )}
                             </motion.div>
                         </div>
                         <div className="app__work-content app__flex">
@@ -161,6 +166,7 @@ const Work = () => {
                                 {/* create a motion.div tag */}
                                 <motion.div
                                     whileHover={{ opacity: [0, 1] }}
+                                    whileTap={{ opacity: [0, 1] }}
                                     className="app__work-hover app__flex"
                                     transition={{
                                         duration: 0.25,
@@ -168,38 +174,45 @@ const Work = () => {
                                         staggerChildren: 0.5,
                                     }}
                                 >
-                                    <a
-                                        href={work.projectLink}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        <motion.div
-                                            whileHover={{ scale: [1, 0.9] }}
-                                            whileInView={{ scale: [0, 1] }}
-                                            className="app__flex"
-                                            transition={{
-                                                duration: 0.25,
-                                            }}
+                                    {work.projectLink && (
+                                        <a
+                                            href={work.projectLink}
+                                            target="_blank"
+                                            rel="noreferrer"
                                         >
-                                            <AiFillEye />
-                                        </motion.div>
-                                    </a>
-                                    <a
-                                        href={work.codeLink}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        <motion.div
-                                            whileHover={{ scale: [1, 0.9] }}
-                                            whileInView={{ scale: [0, 1] }}
-                                            className="app__flex"
-                                            transition={{
-                                                duration: 0.25,
-                                            }}
+                                            <motion.div
+                                                whileHover={{ scale: [1, 0.9] }}
+                                                whileInView={{ scale: [0, 1] }}
+                                                whileTap={{ scale: [1, 0.9] }}
+                                                className="app__flex"
+                                                transition={{
+                                                    duration: 0.25,
+                                                }}
+                                            >
+                                                <AiFillEye />
+                                            </motion.div>
+                                        </a>
+                                    )}
+
+                                    {work.codeLink && (
+                                        <a
+                                            href={work.codeLink}
+                                            target="_blank"
+                                            rel="noreferrer"
                                         >
-                                            <AiFillGithub />
-                                        </motion.div>
-                                    </a>
+                                            <motion.div
+                                                whileHover={{ scale: [1, 0.9] }}
+                                                whileInView={{ scale: [0, 1] }}
+                                                whileTap={{ scale: [1, 0.9] }}
+                                                className="app__flex"
+                                                transition={{
+                                                    duration: 0.25,
+                                                }}
+                                            >
+                                                <AiFillGithub />
+                                            </motion.div>
+                                        </a>
+                                    )}
                                 </motion.div>
                             </div>
                             <div className="app__work-content app__flex">
@@ -207,31 +220,6 @@ const Work = () => {
                                 <p className="p-text" style={{ marginTop: 10 }}>
                                     {work.description}
                                 </p>
-                                <div className="app__work-link">
-                                    {work.projectLink && (
-                                        <a
-                                            href={work.projectLink}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                        >
-                                            <AiFillEye />
-                                        </a>
-                                    )}
-                                    {work.codeLink && (
-                                        <a
-                                            href={work.codeLink}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                        >
-                                            <AiFillGithub />
-                                        </a>
-                                    )}
-                                </div>
-                                <div className="app__work-tag app__flex">
-                                    <p className="p-text">
-                                        {work.tags[0].name}
-                                    </p>
-                                </div>
                             </div>
                         </SwiperSlide>
                     ))}

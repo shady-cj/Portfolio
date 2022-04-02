@@ -19,7 +19,6 @@ const scaleVariants = {
 };
 const Header = () => {
     useEffect(() => {
-        let timeout;
         const createBubbles = () => {
             const section = document.querySelector("#home");
             const createElement = document.createElement("span");
@@ -29,7 +28,7 @@ const Header = () => {
             createElement.style.height = 20 + size + "px";
             createElement.style.left = Math.random() * window.innerWidth + "px";
             section.appendChild(createElement);
-            timeout = setTimeout(() => {
+            setTimeout(() => {
                 createElement.remove();
             }, 4000);
         };
@@ -44,7 +43,6 @@ const Header = () => {
         const interval = setInterval(createBubbles, 250);
         return () => {
             clearInterval(interval);
-            clearTimeout(timeout);
         };
     }, []);
 
