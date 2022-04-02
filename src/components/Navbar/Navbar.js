@@ -1,11 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
-import { motion } from "framer-motion";
 import { images } from "../../constants";
 import "./Navbar.scss";
 import SocialMedia from "../SocialMedia";
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
+
+    useEffect(() => {
+        const bodyEl = document.querySelector("body");
+        const htmlEl = document.querySelector("html");
+        bodyEl.classList.toggle("navbar-isopen", toggle);
+        htmlEl.classList.toggle("navbar-isopen", toggle);
+        const windowResize = () => {
+            if (window.innerWidth > 900) {
+                setToggle(false);
+            }
+        };
+        window.addEventListener("resize", windowResize);
+        return () => {
+            window.removeEventListener("resize", windowResize);
+        };
+    }, [toggle]);
+
     return (
         <nav className="app__navbar">
             <div className="app__navbar-logo">

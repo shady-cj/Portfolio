@@ -31,8 +31,9 @@ const Work = () => {
                             (tag) => tag.name === item
                         );
                         if (tags.length > 0) {
-                            return work;
+                            return true;
                         }
+                        return false;
                     })
                 );
             }
@@ -147,6 +148,8 @@ const Work = () => {
                     grabCursor={true}
                     modules={[EffectCards]}
                     className="myCardSwiper"
+                    preventClicks={false}
+                    preventClicksPropagation={false}
                 >
                     {filterWork.map((work, index) => (
                         <SwiperSlide key={index}>
@@ -204,6 +207,26 @@ const Work = () => {
                                 <p className="p-text" style={{ marginTop: 10 }}>
                                     {work.description}
                                 </p>
+                                <div className="app__work-link">
+                                    {work.projectLink && (
+                                        <a
+                                            href={work.projectLink}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            <AiFillEye />
+                                        </a>
+                                    )}
+                                    {work.codeLink && (
+                                        <a
+                                            href={work.codeLink}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            <AiFillGithub />
+                                        </a>
+                                    )}
+                                </div>
                                 <div className="app__work-tag app__flex">
                                     <p className="p-text">
                                         {work.tags[0].name}

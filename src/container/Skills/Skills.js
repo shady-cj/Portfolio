@@ -7,14 +7,10 @@ import "./Skills.scss";
 const Skills = () => {
     // Create a useState hook for experiences and skills
     const [skills, setSkills] = useState([]);
-    const [experiences, setExperiences] = useState([]);
 
     useEffect(() => {
-        const query = "*[_type == 'experiences']";
         const skillsQuery = "*[_type == 'skills']";
-        client.fetch(query).then((data) => {
-            setExperiences(data);
-        });
+
         client.fetch(skillsQuery).then((data) => {
             setSkills(data);
         });

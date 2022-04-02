@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import "./About.scss";
 import { urlFor, client } from "../../client";
-import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../Wrapper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination } from "swiper";
@@ -11,30 +9,6 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-// import "./styles.css";
-
-// const abouts = [
-//     {
-//         title: "Web Development",
-//         description: "I am a good web developer",
-//         ImgUrl: images.about01,
-//     },
-//     {
-//         title: "Backend Developer",
-//         description: "I am a good web designer",
-//         ImgUrl: images.about02,
-//     },
-//     {
-//         title: "Frontend Developer",
-//         description: "I am a good web developer",
-//         ImgUrl: images.about03,
-//     },
-//     {
-//         title: "Web Development",
-//         description: "I am a good web developer",
-//         ImgUrl: images.about04,
-//     },
-// ];
 const About = () => {
     const [abouts, setAbouts] = useState([]);
 

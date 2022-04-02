@@ -26,3 +26,6 @@ body,
 html {
     overflow-x: hidden;
 }
+.navbar-isopen {
+    overflow: hidden !important;
+}
