@@ -33,9 +33,6 @@ const Header = () => {
             }, 4000);
         };
         function detectWebGLContext() {
-            // Create canvas element. The canvas is not added to the
-            // document itself, so it is never displayed in the
-            // browser window.
             var canvas = document.createElement("canvas");
             // Get WebGLRenderingContext from canvas element.
             var gl =
@@ -88,14 +85,6 @@ const Header = () => {
         }
         var canvas = document.getElementById("canvas");
         var gl = canvas.getContext("webgl");
-
-        // console.log(
-        //     "framebufferstatus",
-        //     gl.checkFramebufferStatus(gl.FRAMEBUFFER)
-        // );
-        console.log("oes float", gl.getExtension("OES_texture_float"));
-
-        console.log(detectWebGLContext());
 
         if (
             detectWebGLContext() &&

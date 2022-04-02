@@ -17,6 +17,8 @@ const Work = () => {
     const [works, setWorks] = useState([]);
     const [tags, setTags] = useState([]);
     const [filterWork, setFilterWork] = useState([]);
+    const [readMore, setReadMore] = useState(false);
+
     const handleWorkFilter = (item) => {
         setActiveFilter(item);
 
@@ -163,14 +165,54 @@ const Work = () => {
                                 <img
                                     src={work.imgUrl && urlFor(work.imgUrl)}
                                     alt={work.name}
+                                    className="app__work-img-for-swiper"
                                 />
                             </div>
                             <div className="app__work-content app__flex">
+                                <div
+                                    style={{
+                                        backgroundColor: "rgb(223, 231, 240)",
+                                        color: "black",
+                                    }}
+                                    className="app__work-tag app__flex"
+                                >
+                                    <p className="p-text">
+                                        {work.tags[0].name}
+                                    </p>
+                                </div>
                                 <h4 className="bold-text">{work.title}</h4>
                                 <p className="p-text" style={{ marginTop: 10 }}>
-                                    {work.description}
+                                    {readMore ? (
+                                        <>
+                                            {work.description}
+                                            <br />
+                                            <span
+                                                style={{ color: "#313bac" }}
+                                                onClick={() =>
+                                                    setReadMore(false)
+                                                }
+                                            >
+                                                read less.
+                                            </span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            {work.description.slice(0, 100)}
+                                            {"..."}
+                                            <br />
+                                            <span
+                                                style={{ color: "#313bac" }}
+                                                onClick={() =>
+                                                    setReadMore(true)
+                                                }
+                                            >
+                                                read more.
+                                            </span>
+                                        </>
+                                    )}
                                 </p>
                             </div>
+
                             <section className="app__work-link-section">
                                 {work.codeLink && (
                                     <a
