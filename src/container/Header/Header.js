@@ -4,9 +4,9 @@ import "./Header.scss";
 import { images } from "../../constants";
 import { AppWrap } from "../../Wrapper";
 import ReactTypingEffect from "react-typing-effect";
-// import $ from "jquery";
+import $ from "jquery";
 // window.jQuery = $;
-// require("jquery.ripples");
+require("jquery.ripples");
 const scaleVariants = {
     whileInView: {
         scale: [0, 1],
@@ -32,14 +32,14 @@ const Header = () => {
                 createElement.remove();
             }, 4000);
         };
-        // $(".app__header").ripples({
-        //     dropRadius: 10,
-        //     perturbance: 0.01,
-        // });
-        // $("#home").ripples({
-        //     dropRadius: 10,
-        //     perturbance: 0.01,
-        // });
+        $(".app__header").ripples({
+            dropRadius: 10,
+            perturbance: 0.01,
+        });
+        $("#home").ripples({
+            dropRadius: 10,
+            perturbance: 0.01,
+        });
         const interval = setInterval(createBubbles, 250);
         return () => {
             clearInterval(interval);

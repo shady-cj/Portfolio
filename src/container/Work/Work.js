@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import { BiGitRepoForked } from "react-icons/bi";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../Wrapper";
 import { urlFor, client } from "../../client";
@@ -177,7 +178,7 @@ const Work = () => {
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        <AiFillGithub /> code
+                                        <BiGitRepoForked /> code
                                     </a>
                                 )}
                                 {work.projectLink && (
