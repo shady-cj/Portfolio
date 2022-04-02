@@ -14,6 +14,7 @@ const SocialMedia = ({ mobile, className }) => {
                     href="https://twitter.com/_c_e_e_j_a_y"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="twitter"
                 >
                     <BsTwitter />
                 </a>
@@ -23,6 +24,7 @@ const SocialMedia = ({ mobile, className }) => {
                     href="https://github.com/shady-cj"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="github"
                 >
                     <FaGithub />
                 </a>
@@ -32,6 +34,7 @@ const SocialMedia = ({ mobile, className }) => {
                     href="https://www.linkedin.com/in/erinfolami-peter-3330111a4/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="linkedin"
                 >
                     <BsLinkedin />
                 </a>
