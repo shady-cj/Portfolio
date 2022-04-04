@@ -32,7 +32,11 @@ const Skills = () => {
                             >
                                 <div
                                     className="app__flex"
-                                    style={{ background: skill.bgColor }}
+                                    style={{
+                                        background: skill.bgColor
+                                            ? skill.bgColor
+                                            : "rgba(237, 242, 248, 0.4)",
+                                    }}
                                 >
                                     <img
                                         src={urlFor(skill.icon)}

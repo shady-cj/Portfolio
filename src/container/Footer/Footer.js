@@ -26,17 +26,19 @@ const Footer = () => {
     // Create  a function to handle the form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        setLoading(true);
-        const contact = {
-            _type: "contact",
-            name: name,
-            email: email,
-            message: message,
-        };
-        client.create(contact).then(() => {
-            setLoading(false);
-            setIsSubmitted(true);
-        });
+        if (name !== "" && email !== "" && message !== "") {
+            setLoading(true);
+            const contact = {
+                _type: "contact",
+                name: name,
+                email: email,
+                message: message,
+            };
+            client.create(contact).then(() => {
+                setLoading(false);
+                setIsSubmitted(true);
+            });
+        }
     };
 
     return (
